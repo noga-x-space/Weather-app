@@ -1,0 +1,127 @@
+:root {
+  --transparent-layer: rgba(255, 255, 255, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 6rem;
+}
+p {
+  font-size: 2rem;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: aliceblue;
+}
+.app::before {
+  content: "";
+  background: url(./assets/PinkSky.jpg) no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.searchCity {
+  text-align: center;
+  padding: 1rem;
+}
+
+input {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+  border: none;
+  background-color: var(--transparent-layer);
+}
+
+::placeholder {
+  color: #464646;
+}
+
+.container {
+  margin: auto;
+  padding: 0 1rem;
+  /* max-width: 700px; */
+  height: 580px;
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top {
+  width: 100%;
+}
+.button-container {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  border-radius: 15px;
+  /* padding: 0 1rem; */
+  /* border: none; */
+  background-color: var(--transparent-layer);
+}
+.button-container button {
+  flex: 1;
+  height: 100%;
+  width: fit-content;
+  border-radius: 15px;
+  border: none;
+  padding: 0.7rem 1rem;
+  background-color: inherit;
+}
+.button-container .clicked-btn{
+  background-color: white;
+}
+
+button.clicked {
+  background-color: white;
+}
+
+.description {
+  position: relative;
+  right: -90%;
+  transform-origin: 0 0;
+  transform: rotate(270deg);
+  display: flex;
+  
+}
+
+.description img{
+  height: 50px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: var(--transparent-layer);
+}
