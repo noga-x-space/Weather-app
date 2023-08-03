@@ -5,7 +5,7 @@ import Cloud from "./assets/cloud.png";
 import Sun from "./assets/sun.png";
 
 function App() {
-  const [cityName, setCityName] = useState("");
+  const [cityName, setCityName] = useState("Jerusalem");
   const [units, setUnits] = useState("metric");
   const [errMSG, setErrMSG] = useState("");
   const [data, setData] = useState({});
@@ -18,7 +18,6 @@ function App() {
         .get(urlKey)
         .then((res) => {
           if (res.status === 200) {
-            console.log(res.data);
             setData(res.data);
             setErrMSG("");
           }
@@ -60,8 +59,10 @@ function App() {
         ></input>
       </div>
       {errMSG.length > 0 ? (
-        <h2>{errMSG}</h2>
-      ) : ( 
+        <div className="errMSG">
+          <h2>{errMSG}</h2>
+        </div>
+      ) : (
         <div className="container">
           <div className="top">
             <div className="location">
@@ -85,8 +86,8 @@ function App() {
               )}
               <div className="temp">
                 {units === "metric"
-                  ? data.main && <h1>{data.main.temp}°C</h1>
-                  : data.main && <h1>{data.main.temp}°F</h1>}
+                  ? data.main && <h1>{data.main.temp.toFixed()}°C</h1>
+                  : data.main && <h1>{data.main.temp.toFixed()}°F</h1>}
               </div>
 
               <div className="description">
@@ -103,8 +104,8 @@ function App() {
             <div className="bottom">
               <div className="feels-like">
                 {units === "metric"
-                  ? data.main && <p>{data.main.feels_like}°C</p>
-                  : data.main && <p>{data.main.feels_like}°F</p>}
+                  ? data.main && <p>{data.main.feels_like.toFixed()}°C</p>
+                  : data.main && <p>{data.main.feels_like.toFixed()}°F</p>}
                 <p>feels more like</p>
               </div>
               <div className="humidity">

@@ -42,9 +42,14 @@ p {
   right: 0;
   z-index: -1;
 }
+
+.errMSG {
+  padding: 2rem;
+  position: relative;
+}
 .searchCity {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 input {
@@ -53,6 +58,7 @@ input {
   border-radius: 15px;
   border: none;
   background-color: var(--transparent-layer);
+  font-size: large;
 }
 
 ::placeholder {
@@ -62,8 +68,8 @@ input {
 .container {
   margin: auto;
   padding: 0 1rem;
-  /* max-width: 700px; */
-  height: 580px;
+  max-width: 1800px;
+  height: 480px;
   position: relative;
   top: 10%;
   display: flex;
@@ -81,8 +87,6 @@ input {
   align-items: center;
   margin-top: 0.5rem;
   border-radius: 15px;
-  /* padding: 0 1rem; */
-  /* border: none; */
   background-color: var(--transparent-layer);
 }
 .button-container button {
@@ -94,7 +98,7 @@ input {
   padding: 0.7rem 1rem;
   background-color: inherit;
 }
-.button-container .clicked-btn{
+.button-container .clicked-btn {
   background-color: white;
 }
 
@@ -108,10 +112,9 @@ button.clicked {
   transform-origin: 0 0;
   transform: rotate(270deg);
   display: flex;
-  
 }
 
-.description img{
+.description img {
   height: 50px;
 }
 
