@@ -1,0 +1,23 @@
+#  Setting Up a Simple Workflow
+# Task: Create a basic GitHub Action that runs a simple "Hello, World!" script
+#  every time code is pushed to the repository.
+
+name: hello world
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ngnix-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: run hello world
+        shell: sh
+        run: echo "hello world"
+
+      - name: run ls
+        shell: sh
+        run: ls -l
